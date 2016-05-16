@@ -9,3 +9,5 @@ def hello():
 
 if __name__ == '__main__':
 	app.run()
+
+api.add_resource(MealRoute, '/foodtracker/api/meal', endpoint='meal')

@@ -7,7 +7,6 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///foodtracker.db'
 db = SQLAlchemy(app)
 
-@api.route('/api/meal')
 class MealAPI(Resource):
 	def get(Meal):
 		print("Requesting Meals")
