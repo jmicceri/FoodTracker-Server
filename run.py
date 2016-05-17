@@ -1,13 +1,14 @@
 from flask import Flask
+from flask_restful import Api
 from api.routes.mealAPI import MealAPI
-app = Flask(__name__)
 
-@app.route('/api')
-def hello():
-	cmd = ''
-	return "Hello World"
+app = Flask(__name__, static_url_path="")
+api = Api(app)
+
+########### Start API Routes #################
+from api.routes.mealAPI import MealAPI
+api.add_resource(MealAPI, '/foodtracker/api/meal', endpoint='meal')
+################# END ########################
 
 if __name__ == '__main__':
-	app.run()
-
-api.add_resource(MealRoute, '/foodtracker/api/meal', endpoint='meal')
+	app.run(debug=True)
