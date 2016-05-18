@@ -8,15 +8,18 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/roger/data/sqlite/food
 db = SQLAlchemy(app)
 
 class MealAPI(Resource):
-	def get(Meal):
-		print("Requesting Meals")
-		'''meals = Meal.query.all()
-		return jsonify(meals)'''
+	# CRUD calls:
+	# CREATE 
+	# READ
+	# UPDATE
+	# DELETE
+
+	def get(self):
+		meals = Meal.query.all()
+		return meals
 
 	def post(self, Meal):
-		meal = Meal()
+		args = reqargs[]		meal = Meal()
 		db.session.add(meal)
 		db.session.commit()
-		meals = Meal.query.all()
 		return jsonify(meals)
-

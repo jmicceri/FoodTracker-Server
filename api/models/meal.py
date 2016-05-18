@@ -10,13 +10,16 @@ db = SQLAlchemy(app)
 
 class Meal(db.Model):
 	__tablename__ = 'Meal'
-	_id = Column(Integer, primary_key=True)
-	name = Column(String(50))
-	photo = Column(String(50))
-	rating = Column(Integer)
+	_id = db.Column(Integer, primary_key=True)
+	name = db.Column(String(50))
+	photo = db.Column(String(50))
+	rating = db.Column(Integer)
 
 
 	def __init__(self, name=None, photo=None, rating=None):
 		self.name = name
 		self.photo = photo
 		self.rating = rating
+
+	def __repr__(self):
+		return '<Meal %r>' % self.Meal

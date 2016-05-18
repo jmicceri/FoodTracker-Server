@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_restful import Api
 from api.routes.mealAPI import MealAPI
+from api.models.meal import Meal
 
 app = Flask(__name__, static_url_path="")
 api = Api(app)
